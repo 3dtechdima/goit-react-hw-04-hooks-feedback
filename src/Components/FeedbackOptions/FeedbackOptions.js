@@ -2,19 +2,18 @@ import React from "react";
 import { FeedbackOptionsContainer } from "./FeedbackOptionsStyles";
 
 const FeedbackOptions = (props) => {
-  const { options, onLeaveFeedback, lang } = props;
+  const { options, onLeaveFeedback } = props;
 
   return options.map(({ name, title }) => {
     return (
-      <FeedbackOptionsContainer>
+      <FeedbackOptionsContainer key={name}>
         <button
           className="btn"
-          key={name}
           type="button"
           name={name}
           onClick={onLeaveFeedback}
         >
-          {title[lang]}
+          {title}
         </button>
       </FeedbackOptionsContainer>
     );
